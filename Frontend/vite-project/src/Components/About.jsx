@@ -1,9 +1,7 @@
 // src/Components/About.jsx
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
-// ⭐ Place your local photo inside: src/assets/marudhamuthu.jpg
-// Example path used below 👇 (you can rename it if needed)
+import marudhamuthu from "../assets/Images/marudhamuthu.jpeg"; // ✅ Correct import path
 
 export default function About() {
   const navigate = useNavigate();
@@ -24,9 +22,8 @@ export default function About() {
           transition={{ duration: 1 }}
           className="w-full md:w-1/2 flex justify-center"
         >
-          {/* ⭐ Replace with your client's local image */}
           <img
-            src="/src/assets/Images/marudhamuthu.jpeg"
+            src={marudhamuthu}
             alt="Yoga Acharya N.K. Marudhamuthu"
             className="rounded-3xl shadow-2xl border-4 border-[#F16824] max-w-md w-full object-cover hover:scale-105 transition-transform duration-500"
           />
@@ -44,7 +41,7 @@ export default function About() {
           </h2>
 
           <p className="text-lg leading-relaxed text-justify">
-            <b>Hari Om</b>  
+            <b>Hari Om</b>
           </p>
 
           <div className="space-y-4 text-lg leading-relaxed">
@@ -89,14 +86,13 @@ export default function About() {
 
             <p className="italic text-[#014F99] text-center md:text-left">
               “Health is Wealth, Peace of Mind is Happiness, Yoga Shows the Way.”  
-              <br />
-              — Swami Vishnu Devananda
+              <br />— Swami Vishnu Devananda
             </p>
           </div>
         </motion.div>
       </motion.div>
 
-      {/* ------------------ SECOND SECTION (ABOUT ORGANISATION) ------------------ */}
+      {/* ------------------ SECOND SECTION ------------------ */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -106,19 +102,19 @@ export default function About() {
         <h3 className="text-3xl font-semibold text-[#014F99] mb-4 text-center md:text-left">
           Vishnu Bharath Yoga KalaiKoodam
         </h3>
-        <p className="text-gray-700 text-lg leading-relaxed text-justify space-y-4">
+        <p className="text-gray-700 text-lg leading-relaxed text-justify">
           Vishnu Bharath Yoga KalaiKoodam was founded in <b>1998</b> with the intention of spreading
           the values of yoga throughout Tamil Nadu. The Founder is a disciple of
           <b> Swami Sivananda</b> and <b>Swami Vishnu Devananda</b>, trained in the Himalayas.  
           The goal of this organisation, now run by a charitable trust, is to enhance health and longevity for all through the practice of yoga.
         </p>
 
-        <p className="text-gray-700 text-lg leading-relaxed text-justify">
+        <p className="text-gray-700 text-lg leading-relaxed text-justify mt-4">
           Regular yoga competitions are conducted where children from both government and private schools participate.
           Presently, we are conducting classes for Individuals, Corporates, Schools, and Colleges at our Centre in Arumbakkam and also doorstep classes for elite individuals.
         </p>
 
-        <p className="text-gray-700 text-lg leading-relaxed text-justify">
+        <p className="text-gray-700 text-lg leading-relaxed text-justify mt-4">
           We are planning to expand our learning to more schools and colleges.  
           We would appreciate it if you could call us for a discussion to conduct Yoga Classes for groups in your school or college.  
           We have Sivananda Ashram-trained Yoga teachers ready to guide you.
