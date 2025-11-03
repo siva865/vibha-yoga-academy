@@ -20,7 +20,7 @@ export default function LogoAnimation({ onFinish }) {
   // if splash visible
   if (showSplash) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-[#014F99] z-50">
+      <div className="fixed inset-0 flex items-center justify-center bg-[#A20001] z-50">
         <motion.img
           src={logo}
           alt="Yoga Logo"

@@ -11,15 +11,15 @@ export default function Contact() {
   const mapLink = "https://maps.app.goo.gl/hxudWZwStq7pv6Xx8";
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#ffffff] to-[#E8F3FA] flex flex-col items-center justify-center px-6 py-16">
+    <div className="min-h-screen bg-[#FAE3AC] flex flex-col items-center justify-center px-6 py-16">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-[#014F99] mb-10 text-center"
+        className="text-4xl font-bold text-[#A20001] mb-10 text-center"
       >
-        Contact Vibha Yoga Academy
+        Contact <span className="text-[#A20001]">Vibha Yoga Academy</span>
       </motion.h2>
 
       {/* Info Section */}
@@ -27,17 +27,17 @@ export default function Contact() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="bg-[#E9EAEC] p-8 rounded-2xl shadow-xl w-full max-w-4xl text-center"
+        className="bg-white/80 p-8 rounded-2xl shadow-xl w-full max-w-4xl text-center border-2 border-[#FFCA00]"
       >
-        <h3 className="text-2xl font-semibold text-[#014F99] mb-6">
+        <h3 className="text-2xl font-semibold text-[#A20001] mb-6">
           Get in Touch
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700">
           {/* Address */}
           <div className="flex flex-col items-center">
-            <FaMapMarkerAlt className="text-[#F16824] text-4xl mb-3" />
-            <p className="font-medium text-lg leading-relaxed max-w-xs">
+            <FaMapMarkerAlt className="text-[#A20001] text-4xl mb-3" />
+            <p className="font-medium text-lg leading-relaxed max-w-xs text-[#A20001]">
               F1, No.16, 1st Street, Postal Audit Colony, <br />
               Virugambakkam, Chennai - 600 092.
             </p>
@@ -45,7 +45,7 @@ export default function Contact() {
               href={mapLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#F16824] font-semibold mt-3 hover:underline"
+              className="text-[#A20001] font-semibold mt-3 hover:text-[#FFCA00]"
             >
               View on Google Map
             </a>
@@ -53,28 +53,28 @@ export default function Contact() {
 
           {/* Phone */}
           <div className="flex flex-col items-center">
-            <FaPhoneAlt className="text-[#F16824] text-4xl mb-3" />
+            <FaPhoneAlt className="text-[#A20001] text-4xl mb-3" />
             <a
               href={`tel:${phone}`}
-              className="text-lg text-[#014F99] font-semibold hover:text-[#F16824] transition-all"
+              className="text-lg text-[#A20001] font-semibold hover:text-[#FFCA00] transition-all"
             >
               {phone}
             </a>
-            <p className="text-gray-600 mt-1">Call Us</p>
+            <p className="text-[#A20001] mt-1">Call Us</p>
           </div>
 
           {/* WhatsApp */}
           <div className="flex flex-col items-center">
-            <FaWhatsapp className="text-[#25D366] text-4xl mb-3" />
+            <FaWhatsapp className="text-[#A20001] text-4xl mb-3" />
             <a
               href={`https://wa.me/${whatsapp}?text=${message}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-[#014F99] font-semibold hover:text-[#F16824] transition-all"
+              className="text-lg text-[#A20001] font-semibold hover:text-[#FFCA00] transition-all"
             >
               {whatsapp}
             </a>
-            <p className="text-gray-600 mt-1">WhatsApp Us</p>
+            <p className="text-[#A20001] mt-1">WhatsApp Us</p>
           </div>
         </div>
       </motion.div>
@@ -84,7 +84,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mt-10 w-full max-w-4xl rounded-2xl overflow-hidden shadow-lg"
+        className="mt-10 w-full max-w-4xl rounded-2xl overflow-hidden shadow-lg border-4 border-[#A20001]"
       >
         <iframe
           title="Vibha Yoga Academy Location"

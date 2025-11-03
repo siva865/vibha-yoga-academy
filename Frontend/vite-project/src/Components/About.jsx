@@ -1,13 +1,13 @@
 // src/Components/About.jsx
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import marudhamuthu from "../assets/Images/marudhamuthu.jpeg"; // ✅ Correct import path
+import marudhamuthu from "../assets/Images/marudhamuththu.jpeg";
 
 export default function About() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-gradient-to-b from-white to-[#f9fafb] min-h-screen flex flex-col justify-center items-center px-6 py-16">
+    <div className="bg-[#FAE3AC] min-h-screen flex flex-col justify-center items-center px-6 py-16">
       {/* MAIN CONTAINER */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -15,7 +15,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-start gap-12"
       >
-        {/* ------------------ LEFT: IMAGE SECTION ------------------ */}
+        {/* LEFT: IMAGE SECTION */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -25,18 +25,18 @@ export default function About() {
           <img
             src={marudhamuthu}
             alt="Yoga Acharya N.K. Marudhamuthu"
-            className="rounded-3xl shadow-2xl border-4 border-[#F16824] max-w-md w-full object-cover hover:scale-105 transition-transform duration-500"
+            className="rounded-3xl shadow-2xl border-4 border-[#FFCA00] max-w-md w-full object-cover hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
 
-        {/* ------------------ RIGHT: TEXT SECTION ------------------ */}
+        {/* RIGHT: TEXT SECTION */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="w-full md:w-1/2 space-y-6 text-gray-800"
+          className="w-full md:w-1/2 space-y-6 text-[#A20001]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#014F99] text-center md:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#A20001] text-center md:text-left">
             About Vibha Yoga Academy
           </h2>
 
@@ -46,7 +46,7 @@ export default function About() {
 
           <div className="space-y-4 text-lg leading-relaxed">
             <p>
-              <b className="text-[#F16824]">Profile of Yoga Acharya N.K. Marudhamuthu</b>
+              <b className="text-[#A20001]">Profile of Yoga Acharya N.K. Marudhamuthu</b>
             </p>
 
             <p>
@@ -62,8 +62,8 @@ export default function About() {
               23 Years of wide teaching experience to various people.
             </p>
 
-            <div className="bg-[#F9F4EF] rounded-2xl p-4 shadow-inner border border-[#F16824]/20">
-              <p className="font-semibold text-[#014F99]">Clients Include:</p>
+            <div className="bg-[#A20001] rounded-2xl p-4 text-[#FFCA00] shadow-inner border border-[#FFCA00]">
+              <p className="font-semibold text-[#FFCA00]">Clients Include:</p>
               <p>
                 <b>Schools:</b> The Mother’s School - Kodambakkam, AVM Rajeswari School - Virugambakkam, Lady Andal School - Chetpet, Hiranandani Upscale School - OMR, Mahalakshmi Vidya Mandir - Pammal.<br />
                 <b>Corporates:</b> Orchid Chemicals Pvt. Ltd., Rex Rotary India Pvt. Ltd.<br />
@@ -84,7 +84,7 @@ export default function About() {
               Conducting National Level Yoga Competitions twice a year for the past 14 years.
             </p>
 
-            <p className="italic text-[#014F99] text-center md:text-left">
+            <p className="italic text-[#A20001] text-center md:text-left">
               “Health is Wealth, Peace of Mind is Happiness, Yoga Shows the Way.”  
               <br />— Swami Vishnu Devananda
             </p>
@@ -92,29 +92,29 @@ export default function About() {
         </motion.div>
       </motion.div>
 
-      {/* ------------------ SECOND SECTION ------------------ */}
+      {/* SECOND SECTION */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="max-w-6xl mt-16 bg-white rounded-3xl shadow-lg p-8 md:p-12 border-t-4 border-[#F16824]"
+        className="max-w-6xl mt-16 bg-[#A20001] rounded-3xl shadow-lg p-8 md:p-12 border-t-4 border-[#FFCA00] text-[#FFCA00]"
       >
-        <h3 className="text-3xl font-semibold text-[#014F99] mb-4 text-center md:text-left">
+        <h3 className="text-3xl font-semibold text-[#FFCA00] mb-4 text-center md:text-left">
           Vishnu Bharath Yoga KalaiKoodam
         </h3>
-        <p className="text-gray-700 text-lg leading-relaxed text-justify">
+        <p className="text-lg leading-relaxed text-justify">
           Vishnu Bharath Yoga KalaiKoodam was founded in <b>1998</b> with the intention of spreading
           the values of yoga throughout Tamil Nadu. The Founder is a disciple of
           <b> Swami Sivananda</b> and <b>Swami Vishnu Devananda</b>, trained in the Himalayas.  
           The goal of this organisation, now run by a charitable trust, is to enhance health and longevity for all through the practice of yoga.
         </p>
 
-        <p className="text-gray-700 text-lg leading-relaxed text-justify mt-4">
+        <p className="text-lg leading-relaxed text-justify mt-4">
           Regular yoga competitions are conducted where children from both government and private schools participate.
           Presently, we are conducting classes for Individuals, Corporates, Schools, and Colleges at our Centre in Arumbakkam and also doorstep classes for elite individuals.
         </p>
 
-        <p className="text-gray-700 text-lg leading-relaxed text-justify mt-4">
+        <p className="text-lg leading-relaxed text-justify mt-4">
           We are planning to expand our learning to more schools and colleges.  
           We would appreciate it if you could call us for a discussion to conduct Yoga Classes for groups in your school or college.  
           We have Sivananda Ashram-trained Yoga teachers ready to guide you.
@@ -122,7 +122,7 @@ export default function About() {
 
         <p className="text-right font-semibold mt-6">
           Regards,<br />
-          <span className="text-[#F16824]">Yoga Acharya N.K. MARUDHAMUTHU</span>
+          <span className="text-[#FFCA00]">Yoga Acharya N.K. MARUDHAMUTHU</span>
         </p>
       </motion.div>
     </div>
