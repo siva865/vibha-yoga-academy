@@ -152,7 +152,7 @@ export default function Home() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/service")}
+            onClick={() => navigate("/services")}
             className="px-8 py-3 bg-[#A20001] text-[#FFCA00] rounded-full font-semibold shadow-md hover:bg-[#FFCA00] hover:text-[#A20001] transition duration-300"
           >
             View Services
