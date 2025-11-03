@@ -53,7 +53,7 @@ export default function Gallery() {
   // 🔹 Fetch all YouTube videos
   const fetchVideos = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/links");
+      const res = await axios.get("https://vibha-yoga-academy.onrender.com/api/links");
       setVideos(res.data);
     } catch (err) {
       console.error("Error fetching videos:", err);
@@ -74,14 +74,14 @@ export default function Gallery() {
 
     if (editingVideo) {
       await axios.put(
-        `http://localhost:5000/api/link/${editingVideo._id}`,
+        `https://vibha-yoga-academy.onrender.com/api/link/${editingVideo._id}`,
         { title, url: link },
         config
       );
       alert("✅ Video updated successfully!");
     } else {
       await axios.post(
-        "http://localhost:5000/api/links",
+        "https://vibha-yoga-academy.onrender.com/api/links",
         { title, url: link },
         config
       );
@@ -107,7 +107,7 @@ export default function Gallery() {
     try {
       const token = localStorage.getItem("token");
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.delete(`http://localhost:5000/api/link/${id}`, config);
+      await axios.delete(`https://vibha-yoga-academy.onrender.com/api/link/${id}`, config);
       alert("🗑️ Video deleted!");
       fetchVideos();
     } catch (err) {
