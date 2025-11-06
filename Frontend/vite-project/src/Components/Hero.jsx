@@ -61,7 +61,6 @@ export default function Home() {
       <AnimatePresence>
         {showPopup && (
           <>
-            {/* Overlay */}
             <motion.div
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               initial={{ opacity: 0 }}
@@ -70,7 +69,6 @@ export default function Home() {
               onClick={() => setShowPopup(false)}
             ></motion.div>
 
-            {/* Popup */}
             <motion.div
               className="fixed inset-0 flex items-center justify-center z-50 px-4"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -79,7 +77,6 @@ export default function Home() {
               transition={{ duration: 0.4 }}
             >
               <div className="relative bg-white p-6 rounded-2xl shadow-2xl text-center max-w-sm w-full">
-                {/* ❌ Close button */}
                 <button
                   onClick={() => setShowPopup(false)}
                   className="absolute top-3 right-3 text-gray-600 hover:text-red-600 transition"
@@ -87,14 +84,12 @@ export default function Home() {
                   <X size={24} />
                 </button>
 
-                {/* Photo */}
                 <img
                   src={templeImg}
                   alt="Arulmigu Marudhappar Swami"
                   className="w-64 h-64 object-cover rounded-xl mx-auto shadow-lg border-4 border-yellow-400"
                 />
 
-                {/* Text */}
                 <p className="mt-4 text-lg font-semibold text-[#A20001] leading-snug">
                   Arulmigu Marudhappar Swami,
                   <br />
@@ -106,18 +101,21 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* 🔸 Main Content Box */}
+      {/* 🔸 Main Content Box with background overlay for letters */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="bg-[#FFCA00]/10 p-8 rounded-2xl border-l-4 border-[#A20001] shadow-lg max-w-3xl z-10"
+        className="relative bg-[#FFCA00]/10 p-8 rounded-2xl border-l-4 border-[#A20001] shadow-lg max-w-3xl z-10 overflow-hidden"
       >
+        {/* ✨ Overlay behind letters */}
+        <div className="absolute inset-0 bg-black/40 rounded-2xl -z-10"></div>
+
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#A20001]"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-[#FFCA00]"
         >
           Hello! This is{" "}
           <span className="text-[#FFCA00]">Vibha Yoga Academy</span>
@@ -127,7 +125,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1.2 }}
-          className="text-base sm:text-lg text-[#A20001] leading-relaxed mb-8"
+          className="text-base sm:text-lg text-white leading-relaxed mb-8"
         >
           (Since 1999) serving in the field of Yoga for Health and Peace.
           <br />
@@ -194,9 +192,7 @@ export default function Home() {
                 </h2>
                 <ul className="text-[#A20001] text-left mb-6 list-disc list-inside leading-relaxed">
                   <li>Improves flexibility, balance, and posture.</li>
-                  <li>
-                    Reduces stress and anxiety through mindful breathing.
-                  </li>
+                  <li>Reduces stress and anxiety through mindful breathing.</li>
                   <li>Boosts energy and enhances mental clarity.</li>
                   <li>Promotes overall well-being and inner peace.</li>
                 </ul>

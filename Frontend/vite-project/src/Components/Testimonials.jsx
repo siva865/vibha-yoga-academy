@@ -45,15 +45,15 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E8F3FA] to-[#ffffff] flex flex-col items-center justify-center px-6 py-20">
+    <div className="min-h-screen bg-[#FAE3AC] flex flex-col items-center justify-center px-6 py-20">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-5xl font-bold text-[#014F99] mb-12 text-center leading-snug"
+        className="text-5xl font-bold text-center leading-snug mb-12 bg-[#A20001]  bg-clip-text text-transparent"
       >
-        What Our <span className="text-[#F16824]">Students Say</span>
+        What Our <span className="font-extrabold">Students Say</span>
       </motion.h2>
 
       {/* Testimonials Grid */}
@@ -65,16 +65,16 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center flex flex-col justify-between"
+            className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center flex flex-col justify-between border border-[#A20001]/10"
           >
             <p className="text-gray-700 italic mb-6 leading-relaxed">
               “{t.text}”
             </p>
             <div>
-              <h4 className="text-[#014F99] font-semibold text-lg mb-2">
+              <h4 className="text-lg font-semibold mb-2 bg-gradient-to-r from-[#A20001] to-[#FFCA00] bg-clip-text text-transparent">
                 {t.name}
               </h4>
-              <div className="text-[#F16824] text-base font-medium">
+              <div className="text-lg font-bold bg-gradient-to-r from-[#A20001] to-[#FFCA00] bg-clip-text text-transparent">
                 ★★★★★
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function Testimonials() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="mt-12 text-gray-600 text-center text-lg max-w-2xl"
+        className="mt-12 text-gray-700 text-center text-lg max-w-2xl"
       >
         Our students are at the heart of everything we do — every story is a
         reflection of growth, balance, and transformation.
@@ -95,5 +95,3 @@ export default function Testimonials() {
     </div>
   );
 }
-
-

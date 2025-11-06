@@ -12,21 +12,17 @@ import img6 from "../assets/Images/img6.jpeg";
 import img7 from "../assets/Images/img7.jpeg";
 import img8 from "../assets/Images/img8.jpeg";
 import img9 from "../assets/Images/img9.jpeg";
-import img10 from "../assets/Images/img10.jpeg";
 import img11 from "../assets/Images/img11.jpeg";
 import img12 from "../assets/Images/img12.jpeg";
 import img13 from "../assets/Images/img13.jpeg";
-import img14 from "../assets/Images/img14.jpeg";
+import img14 from "../assets/Images/mg14.jpeg";
 import img15 from "../assets/Images/img15.jpeg";
-import img16 from "../assets/Images/img16.jpeg";
-import img17 from "../assets/Images/img17.jpeg";
-import img18 from "../assets/Images/img18.jpeg";
 
 export default function Gallery() {
   const staticImages = [
     img1, img2, img3, img4, img5, img6, img7,
-    img8, img9, img10, img11, img12, img13,
-    img14, img15, img17, img16, img18
+    img8, img9,  img11, img12, img13,
+    img14, img15
   ];
 
   const [videos, setVideos] = useState([]);

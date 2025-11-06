@@ -2,20 +2,65 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import marudhamuthu from "../assets/Images/marudhamuththu.jpeg";
+import sivananda from "../assets/Images/sivanandha.jpeg";
+import vishnu from "../assets/Images/vishnu.jpeg";
 
 export default function About() {
   const navigate = useNavigate();
 
   return (
     <div className="bg-[#FAE3AC] min-h-screen flex flex-col justify-center items-center px-6 py-16">
-      {/* MAIN CONTAINER */}
+      {/* 🔸 OUR MENTORS SECTION FIRST */}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="w-full max-w-6xl text-center mb-20"
+      >
+        <h2 className="text-4xl font-bold text-[#A20001] mb-8">Our Mentors</h2>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12">
+          {/* Mentor 1 */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-[#A20001] rounded-3xl p-6 shadow-lg border-2 border-[#FFCA00] max-w-xs"
+          >
+            <img
+              src={sivananda}
+              alt="Swami Sivananda"
+              className=" object-cover rounded-full mx-auto border-4 border-[#FFCA00] shadow-md mb-4"
+            />
+            <h3 className="text-2xl font-bold text-[#FFCA00]">
+              Swami Sivananda
+            </h3>
+            <p className="text-[#FFCA00]/90 text-lg">1887 – 1963</p>
+          </motion.div>
+
+          {/* Mentor 2 */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-[#A20001] rounded-3xl p-6 shadow-lg border-2 border-[#FFCA00] max-w-xs"
+          >
+            <img
+              src={vishnu}
+              alt="Swami Vishnu Devananda"
+              className="w-56 h-56 object-cover rounded-full mx-auto border-4 border-[#FFCA00] shadow-md mb-4"
+            />
+            <h3 className="text-2xl font-bold text-[#FFCA00]">
+              Swami Vishnu Devananda
+            </h3>
+            <p className="text-[#FFCA00]/90 text-lg">1927 – 1993</p>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* 🔸 ABOUT MARUDHAMUTHU SECTION */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-7xl w-full flex flex-col md:flex-row items-center md:items-start gap-12"
       >
-        {/* LEFT: IMAGE SECTION */}
+        {/* LEFT: IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -29,7 +74,7 @@ export default function About() {
           />
         </motion.div>
 
-        {/* RIGHT: TEXT SECTION */}
+        {/* RIGHT: TEXT */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -46,83 +91,120 @@ export default function About() {
 
           <div className="space-y-4 text-lg leading-relaxed">
             <p>
-              <b className="text-[#A20001]">Profile of Yoga Acharya N.K. Marudhamuthu</b>
+              <b className="text-[#A20001]">
+                Profile of Yoga Acharya N.K. Marudhamuthu
+              </b>
             </p>
 
             <p>
-              <b>Professional Qualifications :</b><br />
-              Yoga Teachers Training Course (TTC) – Kerala<br />
-              Advanced Teachers Training Course (ATTC) – Kerala<br />
-              Sadhana Intensive Course (SIC) – Himalayas<br />
-              These courses were conducted by the International Sivananda Yoga Vedanta Dhanvantri Ashram, Kerala & Himalayas.
+              <b>Professional Qualifications :</b>
+              <br />
+              Yoga Teachers Training Course (TTC) – Kerala
+              <br />
+              Advanced Teachers Training Course (ATTC) – Kerala
+              <br />
+              Sadhana Intensive Course (SIC) – Himalayas
+              <br />
+              These courses were conducted by the International Sivananda Yoga
+              Vedanta Dhanvantri Ashram, Kerala & Himalayas.
             </p>
 
             <p>
-              <b>Experiences :</b><br />
+              <b>Experiences :</b>
+              <br />
               23 Years of wide teaching experience to various people.
             </p>
 
             <div className="bg-[#A20001] rounded-2xl p-4 text-[#FFCA00] shadow-inner border border-[#FFCA00]">
               <p className="font-semibold text-[#FFCA00]">Clients Include:</p>
               <p>
-                <b>Schools:</b> The Mother’s School - Kodambakkam, AVM Rajeswari School - Virugambakkam, Lady Andal School - Chetpet, Hiranandani Upscale School - OMR, Mahalakshmi Vidya Mandir - Pammal.<br />
-                <b>Corporates:</b> Orchid Chemicals Pvt. Ltd., Rex Rotary India Pvt. Ltd.<br />
-                <b>Multinational:</b> Nokia, Hyundai, British Airways.<br />
-                <b>Hospitals:</b> TTK Hospital, Chennai (Indira Nagar).<br />
-                <b>Hotels:</b> Asiana Hotel, OMR (Malabar Hotel Pvt. Ltd.), Taj Mount, Mount Road.<br />
+                <b>Schools:</b> The Mother’s School - Kodambakkam, AVM
+                Rajeswari School - Virugambakkam, Lady Andal School - Chetpet,
+                Hiranandani Upscale School - OMR, Mahalakshmi Vidya Mandir -
+                Pammal.
+                <br />
+                <b>Corporates:</b> Orchid Chemicals Pvt. Ltd., Rex Rotary India
+                Pvt. Ltd.
+                <br />
+                <b>Multinational:</b> Nokia, Hyundai, British Airways.
+                <br />
+                <b>Hospitals:</b> TTK Hospital, Chennai (Indira Nagar).
+                <br />
+                <b>Hotels:</b> Asiana Hotel, OMR (Malabar Hotel Pvt. Ltd.), Taj
+                Mount, Mount Road.
+                <br />
                 <b>VVIPs, VIPs, Families</b> and more...
               </p>
             </div>
 
-            <p>
-              <b>Important Achievements :</b><br />
-              Performed in SUN TV, Kalaignar TV & Raj TV.<br />
-              Articles published in Economic Times, Anna Nagar Times & Global Adjustments Magazine.<br />
-              Helped participants overcome chronic ailments.<br />
-              Approx. students trained so far: 23,000+<br />
-              Approx. man hours in Yoga training: 10 lakh hours.<br />
-              Conducting National Level Yoga Competitions twice a year for the past 14 years.
+            <p className="bg-[#A20001] rounded-2xl p-4 text-[#FFCA00] shadow-inner border border-[#FFCA00]">
+              <b className="font-semibold text-[#FFCA00]">Important Achievements :</b>
+              <br />
+              Performed in SUN TV, Kalaignar TV & Raj TV.
+              <br />
+              Articles published in Economic Times, Anna Nagar Times & Global
+              Adjustments Magazine.
+              <br />
+              Helped participants overcome chronic ailments.
+              <br />
+              Approx. students trained so far: 23,000+
+              <br />
+              Approx. man hours in Yoga training: 10 lakh hours.
+              <br />
+              Conducting National Level Yoga Competitions twice a year for the
+              past 14 years.
+               <br/>
+                 <p className="mt-6">
+              “Health is Wealth, Peace of Mind is Happiness, Yoga Shows the
+              Way.” <br />— Swami Vishnu Devananda
+            </p>
             </p>
 
-            <p className="italic text-[#A20001] text-center md:text-left">
-              “Health is Wealth, Peace of Mind is Happiness, Yoga Shows the Way.”  
-              <br />— Swami Vishnu Devananda
-            </p>
+          
           </div>
         </motion.div>
       </motion.div>
 
-      {/* SECOND SECTION */}
+      {/* 🔸 VISHNU BHARATH SECTION */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="max-w-6xl mt-16 bg-[#A20001] rounded-3xl shadow-lg p-8 md:p-12 border-t-4 border-[#FFCA00] text-[#FFCA00]"
+        transition={{ duration: 1, delay: 0.4 }}
+        className="max-w-6xl mt-20 bg-[#A20001] rounded-3xl shadow-lg p-8 md:p-12 border-t-4 border-[#FFCA00] text-[#FFCA00]"
       >
         <h3 className="text-3xl font-semibold text-[#FFCA00] mb-4 text-center md:text-left">
           Vishnu Bharath Yoga KalaiKoodam
         </h3>
         <p className="text-lg leading-relaxed text-justify">
-          Vishnu Bharath Yoga KalaiKoodam was founded in <b>1998</b> with the intention of spreading
-          the values of yoga throughout Tamil Nadu. The Founder is a disciple of
-          <b> Swami Sivananda</b> and <b>Swami Vishnu Devananda</b>, trained in the Himalayas.  
-          The goal of this organisation, now run by a charitable trust, is to enhance health and longevity for all through the practice of yoga.
+          Vishnu Bharath Yoga KalaiKoodam was founded in <b>1998</b> with the
+          intention of spreading the values of yoga throughout Tamil Nadu. The
+          Founder is a disciple of <b>Swami Sivananda</b> and{" "}
+          <b>Swami Vishnu Devananda</b>, trained in the Himalayas. The goal of
+          this organisation, now run by a charitable trust, is to enhance health
+          and longevity for all through the practice of yoga.
         </p>
 
         <p className="text-lg leading-relaxed text-justify mt-4">
-          Regular yoga competitions are conducted where children from both government and private schools participate.
-          Presently, we are conducting classes for Individuals, Corporates, Schools, and Colleges at our Centre in Arumbakkam and also doorstep classes for elite individuals.
+          Regular yoga competitions are conducted where children from both
+          government and private schools participate. Presently, we are
+          conducting classes for Individuals, Corporates, Schools, and Colleges
+          at our Centre in Arumbakkam and also doorstep classes for elite
+          individuals.
         </p>
 
         <p className="text-lg leading-relaxed text-justify mt-4">
-          We are planning to expand our learning to more schools and colleges.  
-          We would appreciate it if you could call us for a discussion to conduct Yoga Classes for groups in your school or college.  
-          We have Sivananda Ashram-trained Yoga teachers ready to guide you.
+          We are planning to expand our learning to more schools and colleges.
+          We would appreciate it if you could call us for a discussion to
+          conduct Yoga Classes for groups in your school or college. We have
+          Sivananda Ashram-trained Yoga teachers ready to guide you.
         </p>
 
         <p className="text-right font-semibold mt-6">
-          Regards,<br />
-          <span className="text-[#FFCA00]">Yoga Acharya N.K. MARUDHAMUTHU</span>
+          Regards,
+          <br />
+          <span className="text-[#FFCA00]">
+            Yoga Acharya N.K. MARUDHAMUTHU
+          </span>
         </p>
       </motion.div>
     </div>
