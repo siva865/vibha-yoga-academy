@@ -1,4 +1,3 @@
-// src/Components/Service.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -108,9 +107,55 @@ export default function Service() {
     "07:15 p.m. to 08:15 p.m.",
   ];
 
-  const weeklyTypes = [
+  // 🆕 UPDATED: Course-specific options with prices
+  const onlineAstanga30DaysWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹18000",
+    "Weekly: 02 classes (60 Minutes) - ₹18000",
+  ];
+
+  const onlineAstanga12DaysWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹6000",
+    "Weekly: 02 classes (60 Minutes) - ₹6000",
+  ];
+
+  const onlineTTCWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹24000",
+    "Weekly: 02 classes (60 Minutes) - ₹24000",
+  ];
+
+  const onlineAdvancedTTCWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹30000",
+    "Weekly: 02 classes (60 Minutes) - ₹30000",
+  ];
+
+  const painReliefWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹6000",
+    "Weekly: 02 classes (60 Minutes) - ₹6000",
+  ];
+
+  const diabetesWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹6000",
+    "Weekly: 02 classes (60 Minutes) - ₹6000",
+  ];
+
+  const childrenAdvancedWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹6000",
+    "Weekly: 02 classes (60 Minutes) - ₹6000",
+  ];
+
+  const boneStrengtheningWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹6000",
+    "Weekly: 02 classes (60 Minutes) - ₹6000",
+  ];
+
+  const weightReductionWeekly = [
+    "Weekly: 03 classes (40 Minutes) - ₹6000",
+    "Weekly: 02 classes (60 Minutes) - ₹6000",
+  ];
+
+  const generalWeeklyTypes = [
     "Weekly: 03 classes (40 Minutes)",
-    "Weekly:  02 classes (60 Minutes)",
+    "Weekly: 02 classes (60 Minutes)",
   ];
 
   const categories = [
@@ -121,7 +166,7 @@ export default function Service() {
 
   const sivanandaWeekly = [
     "Weekly: 03 classes (60 Minutes)",
-    "Weekly:  02 classes (90 Minutes)",
+    "Weekly: 02 classes (90 Minutes)",
   ];
 
   const sivanandaCategory = [
@@ -129,23 +174,34 @@ export default function Service() {
     "Kids (4–14 years) — ₹3600",
   ];
 
-  // 🆕 NEW: Doorstep Yoga Pricing Options
   const doorstepWeekly = [
     "Weekly: 03 classes (60 Minutes) - ₹12000",
     "Weekly: 02 classes (60 Minutes) - ₹8000",
   ];
 
+  // 🆕 NEW: Modal states for each course
   const [showGeneralModal, setShowGeneralModal] = useState(false);
   const [showSivanandaModal, setShowSivanandaModal] = useState(false);
-  const [showDoorstepModal, setShowDoorstepModal] = useState(false); // 🆕 NEW STATE
+  const [showDoorstepModal, setShowDoorstepModal] = useState(false);
+  const [showOnlineAstanga30Modal, setShowOnlineAstanga30Modal] = useState(false);
+  const [showOnlineAstanga12Modal, setShowOnlineAstanga12Modal] = useState(false);
+  const [showOnlineTTCModal, setShowOnlineTTCModal] = useState(false);
+  const [showOnlineAdvancedTTCModal, setShowOnlineAdvancedTTCModal] = useState(false);
+  const [showPainReliefModal, setShowPainReliefModal] = useState(false);
+  const [showDiabetesModal, setShowDiabetesModal] = useState(false);
+  const [showChildrenAdvancedModal, setShowChildrenAdvancedModal] = useState(false);
+  const [showBoneStrengtheningModal, setShowBoneStrengtheningModal] = useState(false);
+  const [showWeightReductionModal, setShowWeightReductionModal] = useState(false);
+
   const [selectedService, setSelectedService] = useState("");
 
+  // 🆕 NEW: Form states for each course
   const [generalForm, setGeneralForm] = useState({
     name: "",
     email: "",
     phone: "",
     timing: timings[0],
-    weekly: weeklyTypes[0],
+    weekly: generalWeeklyTypes[0],
     category: categories[0],
   });
 
@@ -158,37 +214,134 @@ export default function Service() {
     category: sivanandaCategory[0],
   });
 
-  // 🆕 NEW: Doorstep Yoga Form State
   const [doorstepForm, setDoorstepForm] = useState({
     name: "",
     email: "",
     phone: "",
     timing: timings[0],
     weekly: doorstepWeekly[0],
-    address: "", // 🆕 NEW: Address field for doorstep service
+    address: "",
+  });
+
+  // 🆕 NEW: Form states for specific courses
+  const [onlineAstanga30Form, setOnlineAstanga30Form] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: onlineAstanga30DaysWeekly[0],
+  });
+
+  const [onlineAstanga12Form, setOnlineAstanga12Form] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: onlineAstanga12DaysWeekly[0],
+  });
+
+  const [onlineTTCForm, setOnlineTTCForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: onlineTTCWeekly[0],
+  });
+
+  const [onlineAdvancedTTCForm, setOnlineAdvancedTTCForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: onlineAdvancedTTCWeekly[0],
+  });
+
+  const [painReliefForm, setPainReliefForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: painReliefWeekly[0],
+  });
+
+  const [diabetesForm, setDiabetesForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: diabetesWeekly[0],
+  });
+
+  const [childrenAdvancedForm, setChildrenAdvancedForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: childrenAdvancedWeekly[0],
+  });
+
+  const [boneStrengtheningForm, setBoneStrengtheningForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: boneStrengtheningWeekly[0],
+  });
+
+  const [weightReductionForm, setWeightReductionForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    timing: timings[0],
+    weekly: weightReductionWeekly[0],
   });
 
   const [formError, setFormError] = useState("");
 
-  // 🟢 Handle Book Now - UPDATED
+  // 🟢 Handle Book Now - UPDATED with all courses
   const handleBookNow = (title) => {
-    if (title === "Sivananda Beginners Yoga") {
-      setSelectedService(title);
-      setShowSivanandaModal(true);
-      return;
-    }
-    if (title === "Doorstep Yoga (Chennai Only)") {
-      setSelectedService(title);
-      setShowDoorstepModal(true); // 🆕 NEW: Show doorstep modal
-      return;
-    }
-    if (title === "Online Astanga Yoga for Kids") {
-      window.open(razorpayLink, "_blank");
-      return;
-    }
-
     setSelectedService(title);
-    setShowGeneralModal(true);
+
+    switch (title) {
+      case "Sivananda Beginners Yoga":
+        setShowSivanandaModal(true);
+        break;
+      case "Doorstep Yoga (Chennai Only)":
+        setShowDoorstepModal(true);
+        break;
+      case "Online Astanga Yoga 30 Days Course":
+        setShowOnlineAstanga30Modal(true);
+        break;
+      case "Online Astanga Yoga 12 Days Course":
+        setShowOnlineAstanga12Modal(true);
+        break;
+      case "Online Teacher Training Course":
+        setShowOnlineTTCModal(true);
+        break;
+      case "Online Advanced Teacher Training Course":
+        setShowOnlineAdvancedTTCModal(true);
+        break;
+      case "Pain Relief Yoga":
+        setShowPainReliefModal(true);
+        break;
+      case "Diabetes Yoga Classes":
+        setShowDiabetesModal(true);
+        break;
+      case "Children's Advanced Yoga":
+        setShowChildrenAdvancedModal(true);
+        break;
+      case "Bone Strengthening Yoga":
+        setShowBoneStrengtheningModal(true);
+        break;
+      case "Weight Reduction Course":
+        setShowWeightReductionModal(true);
+        break;
+      case "Online Astanga Yoga for Kids":
+        window.open(razorpayLink, "_blank");
+        break;
+      default:
+        setShowGeneralModal(true);
+    }
   };
 
   // 🟢 General Form Submit
@@ -208,7 +361,7 @@ export default function Service() {
       email: "",
       phone: "",
       timing: timings[0],
-      weekly: weeklyTypes[0],
+      weekly: generalWeeklyTypes[0],
       category: categories[0],
     });
   };
@@ -235,7 +388,7 @@ export default function Service() {
     });
   };
 
-  // 🆕 NEW: Doorstep Yoga Form Submit
+  // 🟢 Doorstep Yoga Form Submit
   const handleDoorstepSubmit = (e) => {
     e.preventDefault();
     const { name, email, phone, timing, weekly, address } = doorstepForm;
@@ -256,6 +409,314 @@ export default function Service() {
       address: "",
     });
   };
+
+  // 🆕 NEW: Form submit handlers for specific courses
+  const handleOnlineAstanga30Submit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = onlineAstanga30Form;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Online Astanga Yoga 30 Days Course Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowOnlineAstanga30Modal(false);
+    setOnlineAstanga30Form({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: onlineAstanga30DaysWeekly[0],
+    });
+  };
+
+  const handleOnlineAstanga12Submit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = onlineAstanga12Form;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Online Astanga Yoga 12 Days Course Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowOnlineAstanga12Modal(false);
+    setOnlineAstanga12Form({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: onlineAstanga12DaysWeekly[0],
+    });
+  };
+
+  const handleOnlineTTCSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = onlineTTCForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Online Teacher Training Course Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nBatch: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowOnlineTTCModal(false);
+    setOnlineTTCForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: onlineTTCWeekly[0],
+    });
+  };
+
+  const handleOnlineAdvancedTTCSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = onlineAdvancedTTCForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Online Advanced Teacher Training Course Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nBatch: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowOnlineAdvancedTTCModal(false);
+    setOnlineAdvancedTTCForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: onlineAdvancedTTCWeekly[0],
+    });
+  };
+
+  const handlePainReliefSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = painReliefForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Pain Relief Yoga Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowPainReliefModal(false);
+    setPainReliefForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: painReliefWeekly[0],
+    });
+  };
+
+  const handleDiabetesSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = diabetesForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Diabetes Yoga Classes Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowDiabetesModal(false);
+    setDiabetesForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: diabetesWeekly[0],
+    });
+  };
+
+  const handleChildrenAdvancedSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = childrenAdvancedForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Children's Advanced Yoga Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowChildrenAdvancedModal(false);
+    setChildrenAdvancedForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: childrenAdvancedWeekly[0],
+    });
+  };
+
+  const handleBoneStrengtheningSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = boneStrengtheningForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Bone Strengthening Yoga Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowBoneStrengtheningModal(false);
+    setBoneStrengtheningForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: boneStrengtheningWeekly[0],
+    });
+  };
+
+  const handleWeightReductionSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, phone, timing, weekly } = weightReductionForm;
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      setFormError("Please fill all the fields.");
+      return;
+    }
+    const message = `Weight Reduction Course Booking\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSchedule: ${weekly}\nPreferred Timing: ${timing}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
+    setShowWeightReductionModal(false);
+    setWeightReductionForm({
+      name: "",
+      email: "",
+      phone: "",
+      timing: timings[0],
+      weekly: weightReductionWeekly[0],
+    });
+  };
+
+  // 🆕 NEW: Reusable Modal Component
+  const Modal = ({ show, onClose, title, children, onSubmit }) => {
+    if (!show) return null;
+
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="relative z-10 w-full max-w-lg bg-white rounded-2xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto"
+        >
+          <h3 className="text-2xl font-bold text-[#A20001] mb-2">{title}</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Fill the form below to send your booking details on WhatsApp.
+          </p>
+
+          <form onSubmit={onSubmit} className="space-y-3 text-left">
+            {children}
+          </form>
+        </motion.div>
+      </div>
+    );
+  };
+
+  // 🆕 NEW: Reusable Form Fields Component
+  const FormFields = ({ form, setForm, weeklyOptions, showCategory = false, showAddress = false }) => (
+    <>
+      <input
+        value={form.name}
+        onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+        className="w-full border rounded-md px-3 py-2"
+        placeholder="Full Name"
+        required
+      />
+      <input
+        value={form.email}
+        onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+        className="w-full border rounded-md px-3 py-2"
+        placeholder="Email"
+        required
+      />
+      <input
+        value={form.phone}
+        onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
+        className="w-full border rounded-md px-3 py-2"
+        placeholder="Phone"
+        required
+      />
+
+      {showAddress && (
+        <textarea
+          value={form.address}
+          onChange={(e) => setForm((p) => ({ ...p, address: e.target.value }))}
+          className="w-full border rounded-md px-3 py-2"
+          placeholder="Full Address in Chennai"
+          rows="3"
+          required
+        />
+      )}
+
+      <select
+        value={form.weekly}
+        onChange={(e) => setForm((p) => ({ ...p, weekly: e.target.value }))}
+        className="w-full border rounded-md px-3 py-2"
+      >
+        {weeklyOptions.map((t, i) => (
+          <option key={i}>{t}</option>
+        ))}
+      </select>
+
+      {showCategory && (
+        <select
+          value={form.category}
+          onChange={(e) => setForm((p) => ({ ...p, category: e.target.value }))}
+          className="w-full border rounded-md px-3 py-2"
+        >
+          {categories.map((c, i) => (
+            <option key={i}>{c}</option>
+          ))}
+        </select>
+      )}
+
+      <select
+        value={form.timing}
+        onChange={(e) => setForm((p) => ({ ...p, timing: e.target.value }))}
+        className="w-full border rounded-md px-3 py-2"
+      >
+        {timings.map((t, i) => (
+          <option key={i}>{t}</option>
+        ))}
+      </select>
+
+      {formError && <p className="text-sm text-red-600">{formError}</p>}
+
+      <div className="flex justify-end gap-3 mt-4">
+        <button
+          type="button"
+          onClick={() => {
+            setShowGeneralModal(false);
+            setShowSivanandaModal(false);
+            setShowDoorstepModal(false);
+            setShowOnlineAstanga30Modal(false);
+            setShowOnlineAstanga12Modal(false);
+            setShowOnlineTTCModal(false);
+            setShowOnlineAdvancedTTCModal(false);
+            setShowPainReliefModal(false);
+            setShowDiabetesModal(false);
+            setShowChildrenAdvancedModal(false);
+            setShowBoneStrengtheningModal(false);
+            setShowWeightReductionModal(false);
+          }}
+          className="px-4 py-2 rounded-full border"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          className="px-4 py-2 rounded-full bg-[#A20001] text-[#FFCA00] font-semibold"
+        >
+          Send to WhatsApp
+        </button>
+      </div>
+    </>
+  );
 
   return (
     <section className="pt-24 pb-16 px-6 min-h-screen bg-[#FAE3AC] text-center">
@@ -294,315 +755,178 @@ export default function Service() {
         ))}
       </div>
 
-      {/* === GENERAL FORM MODAL === */}
-      {showGeneralModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setShowGeneralModal(false)}
-          />
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative z-10 w-full max-w-lg bg-white rounded-2xl p-6 shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-[#A20001] mb-2">
-              {selectedService} Booking
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Fill the form below to send your booking details on WhatsApp.
-            </p>
+      {/* === MODALS FOR EACH COURSE === */}
 
-            <form onSubmit={handleGeneralSubmit} className="space-y-3 text-left">
-              <input
-                value={generalForm.name}
-                onChange={(e) =>
-                  setGeneralForm((p) => ({ ...p, name: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Full Name"
-              />
-              <input
-                value={generalForm.email}
-                onChange={(e) =>
-                  setGeneralForm((p) => ({ ...p, email: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Email"
-              />
-              <input
-                value={generalForm.phone}
-                onChange={(e) =>
-                  setGeneralForm((p) => ({ ...p, phone: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Phone"
-              />
+      {/* General Modal */}
+      <Modal
+        show={showGeneralModal}
+        onClose={() => setShowGeneralModal(false)}
+        title={`${selectedService} Booking`}
+        onSubmit={handleGeneralSubmit}
+      >
+        <FormFields
+          form={generalForm}
+          setForm={setGeneralForm}
+          weeklyOptions={generalWeeklyTypes}
+          showCategory={true}
+        />
+      </Modal>
 
-              <select
-                value={generalForm.weekly}
-                onChange={(e) =>
-                  setGeneralForm((p) => ({ ...p, weekly: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {weeklyTypes.map((t, i) => (
-                  <option key={i}>{t}</option>
-                ))}
-              </select>
+      {/* Sivananda Modal */}
+      <Modal
+        show={showSivanandaModal}
+        onClose={() => setShowSivanandaModal(false)}
+        title="Sivananda Beginners Yoga Course"
+        onSubmit={handleSivanandaSubmit}
+      >
+        <FormFields
+          form={sivanandaForm}
+          setForm={setSivanandaForm}
+          weeklyOptions={sivanandaWeekly}
+          showCategory={true}
+        />
+      </Modal>
 
-              <select
-                value={generalForm.category}
-                onChange={(e) =>
-                  setGeneralForm((p) => ({ ...p, category: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {categories.map((c, i) => (
-                  <option key={i}>{c}</option>
-                ))}
-              </select>
+      {/* Doorstep Modal */}
+      <Modal
+        show={showDoorstepModal}
+        onClose={() => setShowDoorstepModal(false)}
+        title="Doorstep Yoga (Chennai Only)"
+        onSubmit={handleDoorstepSubmit}
+      >
+        <FormFields
+          form={doorstepForm}
+          setForm={setDoorstepForm}
+          weeklyOptions={doorstepWeekly}
+          showAddress={true}
+        />
+      </Modal>
 
-              <select
-                value={generalForm.timing}
-                onChange={(e) =>
-                  setGeneralForm((p) => ({ ...p, timing: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {timings.map((t, i) => (
-                  <option key={i}>{t}</option>
-                ))}
-              </select>
+      {/* Online Astanga 30 Days Modal */}
+      <Modal
+        show={showOnlineAstanga30Modal}
+        onClose={() => setShowOnlineAstanga30Modal(false)}
+        title="Online Astanga Yoga 30 Days Course - ₹18000"
+        onSubmit={handleOnlineAstanga30Submit}
+      >
+        <FormFields
+          form={onlineAstanga30Form}
+          setForm={setOnlineAstanga30Form}
+          weeklyOptions={onlineAstanga30DaysWeekly}
+        />
+      </Modal>
 
-              {formError && <p className="text-sm text-red-600">{formError}</p>}
+      {/* Online Astanga 12 Days Modal */}
+      <Modal
+        show={showOnlineAstanga12Modal}
+        onClose={() => setShowOnlineAstanga12Modal(false)}
+        title="Online Astanga Yoga 12 Days Course - ₹6000"
+        onSubmit={handleOnlineAstanga12Submit}
+      >
+        <FormFields
+          form={onlineAstanga12Form}
+          setForm={setOnlineAstanga12Form}
+          weeklyOptions={onlineAstanga12DaysWeekly}
+        />
+      </Modal>
 
-              <div className="flex justify-end gap-3 mt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowGeneralModal(false)}
-                  className="px-4 py-2 rounded-full border"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 rounded-full bg-[#A20001] text-[#FFCA00] font-semibold"
-                >
-                  Send to WhatsApp
-                </button>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      )}
+      {/* Online TTC Modal */}
+      <Modal
+        show={showOnlineTTCModal}
+        onClose={() => setShowOnlineTTCModal(false)}
+        title="Online Teacher Training Course - ₹24000"
+        onSubmit={handleOnlineTTCSubmit}
+      >
+        <FormFields
+          form={onlineTTCForm}
+          setForm={setOnlineTTCForm}
+          weeklyOptions={onlineTTCWeekly}
+        />
+      </Modal>
 
-      {/* === SIVANANDA FORM MODAL === */}
-      {showSivanandaModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setShowSivanandaModal(false)}
-          />
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative z-10 w-full max-w-lg bg-white rounded-2xl p-6 shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-[#A20001] mb-2">
-              Sivananda Beginners Yoga Course
-            </h3>
-          
+      {/* Online Advanced TTC Modal */}
+      <Modal
+        show={showOnlineAdvancedTTCModal}
+        onClose={() => setShowOnlineAdvancedTTCModal(false)}
+        title="Online Advanced Teacher Training Course - ₹30000"
+        onSubmit={handleOnlineAdvancedTTCSubmit}
+      >
+        <FormFields
+          form={onlineAdvancedTTCForm}
+          setForm={setOnlineAdvancedTTCForm}
+          weeklyOptions={onlineAdvancedTTCWeekly}
+        />
+      </Modal>
 
-            <form onSubmit={handleSivanandaSubmit} className="space-y-3 text-left">
-              <input
-                value={sivanandaForm.name}
-                onChange={(e) =>
-                  setSivanandaForm((p) => ({ ...p, name: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Full Name"
-              />
-              <input
-                value={sivanandaForm.email}
-                onChange={(e) =>
-                  setSivanandaForm((p) => ({ ...p, email: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Email"
-              />
-              <input
-                value={sivanandaForm.phone}
-                onChange={(e) =>
-                  setSivanandaForm((p) => ({ ...p, phone: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Phone"
-              />
+      {/* Pain Relief Modal */}
+      <Modal
+        show={showPainReliefModal}
+        onClose={() => setShowPainReliefModal(false)}
+        title="Pain Relief Yoga - ₹6000"
+        onSubmit={handlePainReliefSubmit}
+      >
+        <FormFields
+          form={painReliefForm}
+          setForm={setPainReliefForm}
+          weeklyOptions={painReliefWeekly}
+        />
+      </Modal>
 
-              <select
-                value={sivanandaForm.weekly}
-                onChange={(e) =>
-                  setSivanandaForm((p) => ({ ...p, weekly: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {sivanandaWeekly.map((t, i) => (
-                  <option key={i}>{t}</option>
-                ))}
-              </select>
+      {/* Diabetes Modal */}
+      <Modal
+        show={showDiabetesModal}
+        onClose={() => setShowDiabetesModal(false)}
+        title="Diabetes Yoga Classes - ₹6000"
+        onSubmit={handleDiabetesSubmit}
+      >
+        <FormFields
+          form={diabetesForm}
+          setForm={setDiabetesForm}
+          weeklyOptions={diabetesWeekly}
+        />
+      </Modal>
 
-              <select
-                value={sivanandaForm.category}
-                onChange={(e) =>
-                  setSivanandaForm((p) => ({ ...p, category: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {sivanandaCategory.map((c, i) => (
-                  <option key={i}>{c}</option>
-                ))}
-              </select>
+      {/* Children's Advanced Modal */}
+      <Modal
+        show={showChildrenAdvancedModal}
+        onClose={() => setShowChildrenAdvancedModal(false)}
+        title="Children's Advanced Yoga - ₹6000"
+        onSubmit={handleChildrenAdvancedSubmit}
+      >
+        <FormFields
+          form={childrenAdvancedForm}
+          setForm={setChildrenAdvancedForm}
+          weeklyOptions={childrenAdvancedWeekly}
+        />
+      </Modal>
 
-              <select
-                value={sivanandaForm.timing}
-                onChange={(e) =>
-                  setSivanandaForm((p) => ({ ...p, timing: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {timings.map((t, i) => (
-                  <option key={i}>{t}</option>
-                ))}
-              </select>
+      {/* Bone Strengthening Modal */}
+      <Modal
+        show={showBoneStrengtheningModal}
+        onClose={() => setShowBoneStrengtheningModal(false)}
+        title="Bone Strengthening Yoga - ₹6000"
+        onSubmit={handleBoneStrengtheningSubmit}
+      >
+        <FormFields
+          form={boneStrengtheningForm}
+          setForm={setBoneStrengtheningForm}
+          weeklyOptions={boneStrengtheningWeekly}
+        />
+      </Modal>
 
-              {formError && <p className="text-sm text-red-600">{formError}</p>}
-
-              <div className="flex justify-end gap-3 mt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowSivanandaModal(false)}
-                  className="px-4 py-2 rounded-full border"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 rounded-full bg-[#A20001] text-[#FFCA00] font-semibold"
-                >
-                  Send to WhatsApp
-                </button>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      )}
-
-      {/* 🆕 NEW: DOORSTEP YOGA MODAL */}
-      {showDoorstepModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setShowDoorstepModal(false)}
-          />
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative z-10 w-full max-w-lg bg-white rounded-2xl p-6 shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-[#A20001] mb-2">
-              Doorstep Yoga (Chennai Only)
-            </h3>
-           
-            <form onSubmit={handleDoorstepSubmit} className="space-y-3 text-left">
-              <input
-                value={doorstepForm.name}
-                onChange={(e) =>
-                  setDoorstepForm((p) => ({ ...p, name: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Full Name"
-                required
-              />
-              <input
-                value={doorstepForm.email}
-                onChange={(e) =>
-                  setDoorstepForm((p) => ({ ...p, email: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Email"
-                required
-              />
-              <input
-                value={doorstepForm.phone}
-                onChange={(e) =>
-                  setDoorstepForm((p) => ({ ...p, phone: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Phone"
-                required
-              />
-
-              {/* 🆕 NEW: Address Field */}
-              <textarea
-                value={doorstepForm.address}
-                onChange={(e) =>
-                  setDoorstepForm((p) => ({ ...p, address: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-                placeholder="Full Address in Chennai"
-                rows="3"
-                required
-              />
-
-              <select
-                value={doorstepForm.weekly}
-                onChange={(e) =>
-                  setDoorstepForm((p) => ({ ...p, weekly: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {doorstepWeekly.map((t, i) => (
-                  <option key={i}>{t}</option>
-                ))}
-              </select>
-
-              <select
-                value={doorstepForm.timing}
-                onChange={(e) =>
-                  setDoorstepForm((p) => ({ ...p, timing: e.target.value }))
-                }
-                className="w-full border rounded-md px-3 py-2"
-              >
-                {timings.map((t, i) => (
-                  <option key={i}>{t}</option>
-                ))}
-              </select>
-
-              {formError && <p className="text-sm text-red-600">{formError}</p>}
-
-              <div className="flex justify-end gap-3 mt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowDoorstepModal(false)}
-                  className="px-4 py-2 rounded-full border"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 rounded-full bg-[#A20001] text-[#FFCA00] font-semibold"
-                >
-                  Send to WhatsApp
-                </button>
-              </div>
-            </form>
-          </motion.div>
-        </div>
-      )}
+      {/* Weight Reduction Modal */}
+      <Modal
+        show={showWeightReductionModal}
+        onClose={() => setShowWeightReductionModal(false)}
+        title="Weight Reduction Course - ₹6000"
+        onSubmit={handleWeightReductionSubmit}
+      >
+        <FormFields
+          form={weightReductionForm}
+          setForm={setWeightReductionForm}
+          weeklyOptions={weightReductionWeekly}
+        />
+      </Modal>
     </section>
   );
 }
