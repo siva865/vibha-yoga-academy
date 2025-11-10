@@ -348,15 +348,12 @@ export default function YogaBookingPage() {
       <motion.div initial="hidden" animate="visible" variants={pageVariants}>
         <motion.h1
           variants={cardVariants}
-          className="text-3xl md:text-4xl font-bold mb-6 text-[#FFCA00]"
+          className="text-3xl md:text-4xl font-bold mb-4 text-[#A20001]"
           style={{ textAlign: "center" }}
         >
-          Yoga Services & Booking
+          Our Services 
         </motion.h1>
 
-        <motion.p variants={cardVariants} className="text-center mb-8 text-sm text-[#A20001] opacity-90">
-          Choose a service and click <span className="font-semibold">Book Now</span> to schedule. Payments for some services redirect to Razorpay.
-        </motion.p>
 
         <motion.div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
@@ -426,7 +423,7 @@ export default function YogaBookingPage() {
                         value={formData.name}
                         onChange={(e) => handleChange("name", e.target.value)}
                         className={`mt-1 block w-full rounded-md p-2 border ${errors.name ? 'border-red-500' : 'border-[#A20001]'} bg-white`}
-                        placeholder="Your full name"
+                        placeholder="Your full name"v
                       />
                       {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
                     </div>
