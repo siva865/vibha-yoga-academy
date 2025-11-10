@@ -344,12 +344,12 @@ export default function YogaBookingPage() {
   };
 
   return (
-    <div className="min-h-screen p-6" style={{ background: "#FAE3AC" }}>
+    <div className="min-h-screen p-6 mt-2" style={{ background: "#FAE3AC" }}>
       <motion.div initial="hidden" animate="visible" variants={pageVariants}>
         <motion.h1
           variants={cardVariants}
-          className="text-3xl md:text-4xl font-bold mb-4 text-[#A20001]"
-          style={{ textAlign: "center" }}
+          className="text-3xl md:text-4xl font-bold mb-8 text-[#A20001]"
+          style={{ textAlign: "center"}}
         >
           Our Services 
         </motion.h1>
