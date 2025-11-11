@@ -222,11 +222,15 @@ const serviceConfigs = {
   },
   "Regular Yoga Course": {
     weeklyOptions: [
-      "Weekly: 03 classes (40 Minutes) - ₹6000",
-      "Weekly: 02 classes (60 Minutes) - ₹6000",
+      "Weekly: 03 classes (40 Minutes)",
+      "Weekly: 02 classes (60 Minutes) ",
     ],
-    categories: [],
-    showCategory: false,
+    categories: [
+      "Adults (14+ years) — ₹3600",
+      "Kids (4–14 years) — ₹1500",
+      "Kids (6 months) — ₹6000",
+    ],
+    showCategory: true,
     showAddress: false,
   },
   "Ladies & Housewives Basic Course": {

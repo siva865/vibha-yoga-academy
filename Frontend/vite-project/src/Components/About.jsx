@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import marudhamuthu from "../assets/Images/marudhamuththu.jpeg";
-import sivananda from "../assets/Images/sivanandha.jpeg";
-import vishnu from "../assets/Images/vishnu.jpeg";
+import sivananda from "../assets/Images/vishnu.jpeg";
+import vishnu from "../assets/Images/sivanandha.jpeg";
 
 export default function About() {
   const navigate = useNavigate();
